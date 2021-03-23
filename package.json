@@ -10,6 +10,13 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "scripts": {
+    "test": "npx jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eriocl/frontend-project-lvl2.git"
@@ -22,5 +29,8 @@
   "homepage": "https://github.com/eriocl/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^7.2.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
