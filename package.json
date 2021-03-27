@@ -4,7 +4,7 @@
   "description": "[![Actions Status](https://github.com/eriocl/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/eriocl/frontend-project-lvl2/actions)",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest"
+    "test": "npx jest --bail"
   },
   "type": "module",
   "bin": {
