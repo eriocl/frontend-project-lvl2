@@ -3,7 +3,7 @@ import _ from 'lodash';
 const convertValueToPrettyString = (value, key, depth) => {
   const tab = '    '.repeat(depth);
   if (!_.isObject(value)) {
-    return `${key}: ${value}`.trim();
+    return `${key}: ${value}`;
   }
   const newKeys = _.keys(value);
   const formatedValue = newKeys.map((newKey) => {
