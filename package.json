@@ -1,7 +1,7 @@
 {
-  "name": "@hexlet/code",
+  "name": "gendiff",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/eriocl/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/eriocl/frontend-project-lvl2/actions)",
+  "description": "CLI utility",
   "main": "index.js",
   "scripts": {
     "test": "npx jest --bail"
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eriocl/frontend-project-lvl2.git"
+    "url": "git+https://github.com/eriocl/gendiff-js.git"
   },
   "author": "Alex B.",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/eriocl/frontend-project-lvl2/issues"
+    "url": "https://github.com/eriocl/gendiff-js/issues"
   },
-  "homepage": "https://github.com/eriocl/frontend-project-lvl2#readme",
+  "homepage": "https://github.com/eriocl/gendiff-js/blob/main/README.md",
   "dependencies": {
     "commander": "^7.2.0",
     "js-yaml": "^3.14.1",
