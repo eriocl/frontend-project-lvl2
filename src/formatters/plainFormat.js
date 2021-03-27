@@ -1,4 +1,3 @@
-/* eslint fp/no-mutating-methods: 0 */
 import _ from 'lodash';
 
 const stringify = (value) => {
