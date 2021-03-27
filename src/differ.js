@@ -4,23 +4,22 @@ import _ from 'lodash';
 import getFormatedDiff from './formatters/index.js';
 import parse from './parsers.js';
 
-const getDiffTree = (dataBefore, dataAfter) => {
+ const getDiffTree = (dataBefore, dataAfter) => {
   const keysBefore = _.keys(dataBefore);
   const keysAfter = _.keys(dataAfter);
-  const commonKeys = _.uniq(keysBefore.concat(keysAfter));
-  commonKeys.sort();
+  const commonKeys = _.sortBy(_.union(keysBefore, keysAfter));
   return commonKeys.map((key) => {
-    if (!dataBefore.includes(key)) {
+    if (!_.has(dataBefore, key)) {
       return { key, status: 'added', value: dataAfter[key] };
     }
-    if (!dataAfter.includes(key)) {
-      return { key, status: 'deletes', value: dataBefore[key] };
+    if (!_.has(dataAfter, key)) {
+      return { key, status: 'deleted', value: dataBefore[key] };
     }
     if (dataBefore[key] === dataAfter[key]) {
       return { key, status: 'unchanged', value: dataBefore[key] };
     }
     if (_.isPlainObject(dataBefore[key]) && _.isPlainObject(dataAfter[key])) {
-      return { key, status: 'nested', children: getDiffTree((dataBefore[key], dataAfter[key])) };
+      return { key, status: 'nested', children: getDiffTree(dataBefore[key], dataAfter[key]) };
     }
     return {
       key, status: 'changed', valueBefore: dataBefore[key], valueAfter: dataAfter[key],
@@ -28,7 +27,7 @@ const getDiffTree = (dataBefore, dataAfter) => {
   });
 };
 
-const genDiff = (path1, path2, format) => {
+const genDiff = (path1, path2, format = 'stylish') => {
   const fileBeforeFormat = path.extname(path1).slice(1);
   const fileAfterFormat = path.extname(path1).slice(1);
   const validPathBefore = path.resolve(process.cwd(), path1);

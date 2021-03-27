@@ -5,8 +5,6 @@ import genDiff from '../src/differ.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-console.log(__filename);
-console.log(__dirname);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (fileName) => fs.readFileSync((getFixturePath(fileName)), 'utf-8');
 

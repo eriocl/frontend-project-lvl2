@@ -1,10 +1,13 @@
 import _ from 'lodash';
 
 const stringify = (value) => {
+  if (_.isString(value)) {
+    return `'${value}'`;
+  }
   if (_.isObject(value)) {
     return '[complex value]';
   }
-  return `'${value}'`;
+  return value;
 };
 
 export default (diffTree) => {
@@ -20,7 +23,7 @@ export default (diffTree) => {
           acc.push(`Property '${newPath}' was added with value: ${stringify(node.value)}`);
           break;
         case 'deleted':
-          acc(`Property '${newPath}' was removed`);
+          acc.push(`Property '${newPath}' was removed`);
           break;
         case 'unchanged':
           break;
