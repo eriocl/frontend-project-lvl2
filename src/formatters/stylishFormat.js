@@ -7,8 +7,8 @@ const convertValueToPrettyString = (value, key, depth) => {
   }
   const newKeys = _.keys(value);
   const formatedValue = newKeys.map((newKey) => {
-    const tab = '    '.repeat(depth + 1);
-    return `${tab}${convertValueToPrettyString(value[newKey], newKey, depth + 1)}`;
+    const newTab = '    '.repeat(depth + 1);
+    return `${newTab}${convertValueToPrettyString(value[newKey], newKey, depth + 1)}`;
   });
   return `${key}: {\n${formatedValue.join('\n')}\n${tab}}`;
 };

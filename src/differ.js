@@ -4,7 +4,7 @@ import _ from 'lodash';
 import getFormatedDiff from './formatters/index.js';
 import parse from './parsers.js';
 
- const getDiffTree = (dataBefore, dataAfter) => {
+const getDiffTree = (dataBefore, dataAfter) => {
   const keysBefore = _.keys(dataBefore);
   const keysAfter = _.keys(dataAfter);
   const commonKeys = _.sortBy(_.union(keysBefore, keysAfter));
