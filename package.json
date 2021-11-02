@@ -1,5 +1,5 @@
 {
-  "name": "gendiff",
+  "name": "eriocl-gendiff",
   "version": "1.0.0",
   "description": "CLI utility",
   "main": "index.js",

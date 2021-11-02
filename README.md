@@ -12,13 +12,7 @@
 ## Install
 
 ```sh
-git clone https://github.com/eriocl/gendiff-js.git
-cd gendiff-js
-make ci
-cd gendiff-js/
-npm link
-cd /project_dir
-npm link gendiff-js
+npm i eriocl-gendiff
 ```
 
 ## Run tests
