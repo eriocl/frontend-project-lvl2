@@ -15,7 +15,10 @@
 git clone https://github.com/eriocl/gendiff-js.git
 cd gendiff-js
 make ci
-make link
+cd gendiff-js/
+npm link
+cd /project_dir
+npm link gendiff-js
 ```
 
 ## Run tests
